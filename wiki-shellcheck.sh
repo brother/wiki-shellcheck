@@ -46,6 +46,10 @@ if [ "$update" = always ]; then
 			echo "INFO: git pull requested in config but failed."
 		fi
 	fi
+elif [ "$update" = bnackground ]; then
+	if [ -x "$(whereis -b git | awk -F: '{print $1}')" ]; then
+		git -C "$path" pull -q &
+	fi
 fi
 
 if [ -f "/home/brother/git/other/shellcheck.wiki/$needle.md" ]; then
