@@ -32,4 +32,17 @@ Clone the shellcheck wiki:
 
 ## Usage
 
-...
+```sh
+brother ~$ wiki-shellcheck.sh SC2046
+SC2046: Quote this to prevent word splitting
+brother ~$ wiki-shellcheck.sh SC2005
+SC2005: Quote this to prevent word splitting
+```
+
+## TODO
+
+ - Verbose mode, output more/all of page not just the title.
+ - Rewrite parts where awk and sed is used to fetch information from
+   files.
+ - Add smartness to decide if the git clone of the wiki needs updating
+   or not (second query in two minutes probably can cope without).
