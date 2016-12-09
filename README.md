@@ -30,6 +30,31 @@ Clone the shellcheck wiki:
       path=/location/of/your/clone
   - Place the script at your PATH.
 
+## Config
+
+Config can be set either in environment via export or in a file called
+shellcheck.wiki.cfg in $XDG_CONFIG_HOME. XDG_CONFIG_HOME is generally
+~/.config.
+
+The two settings availabel for config are the path to the Shellcheck
+wiki git clone and if that should be updated or not.
+
+Example:
+```sh
+brother ~$ export SHELLCHECKWIKIPATH=/home/brother/git/other/shellcheck.wiki
+brother ~$ export SHELLCHECKWIKIUPDATE=background
+
+
+brother ~$ cat .config/shellcheck.wiki.cfg
+path=/home/brother/git/other/shellcheck.wiki
+update=background
+```
+
+The git pull setting can be either always or background. The default
+setting is to never update the clone. If set to always update it will
+also warn about failures in the update as it will do the update inline
+before checking for the search key.
+
 ## Usage
 
 ```sh
