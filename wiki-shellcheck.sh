@@ -40,6 +40,9 @@ if [ ! -d "$path" ]; then
 fi
 
 if [ "$update" = always ]; then
+	# Use something like
+	#   git log --pretty=format:'%ct' -n 1
+	# to fetch info on how long since last commit in the tree?
 	# Is this the best way to find the git executable?
 	if [ -x "$(whereis -b git | awk -F: '{print $1}')" ]; then
 		if ! git -C "$path" pull -q; then
