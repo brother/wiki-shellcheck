@@ -55,6 +55,11 @@ elif [ "$update" = background ]; then
 	fi
 fi
 
+case $needle in
+	SC*) ;;
+	*) needle="SC$needle" ;;
+esac
+
 if [ -f "$path/$needle.md" ]; then
 	# FIXME this should be converted to clean sh.
 	echo "$needle: $(head -1 "/home/brother/git/other/shellcheck.wiki/$needle.md" | sed 's/^#\+ //')"
