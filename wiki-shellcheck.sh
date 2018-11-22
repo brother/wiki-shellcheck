@@ -55,7 +55,7 @@ elif [ "$update" = background ]; then
 	fi
 fi
 
-if [ -f "/home/brother/git/other/shellcheck.wiki/$needle.md" ]; then
+if [ -f "$path/$needle.md" ]; then
 	# FIXME this should be converted to clean sh.
 	echo "$needle: $(head -1 "/home/brother/git/other/shellcheck.wiki/$needle.md" | sed 's/^#\+ //')"
 	export verbose # To silence the shellcheck warning until the feature is implemented.
